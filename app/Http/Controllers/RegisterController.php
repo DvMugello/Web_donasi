@@ -47,7 +47,7 @@ class RegisterController extends Controller
 
         $validateData['password']= Hash::make($validateData['password']);
 
-        $user->assignRole('writer');
+        $user->assignRole('user');
 
         User::create($validateData);
 
