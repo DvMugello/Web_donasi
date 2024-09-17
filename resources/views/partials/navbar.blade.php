@@ -44,7 +44,7 @@
                     </form>
                 @else
                     <li class="nav-item ms-3 me-2">
-                        <a class="btn btn-primary text-white" href="/Register">Daftar</a>
+                        <a class="btn btn-primary text-white" href="{{ route('Register.create') }}">Daftar</a>
                     </li>
                     <li class="nav-item ms-2">
                         <a class="btn btn-light text-black" href="/Login">Masuk</a>

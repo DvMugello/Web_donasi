@@ -22,7 +22,7 @@ class RegisterController extends Controller
     public function create()
     {
         return view('Register.create',[
-            'Form Register'=>'Form Register'
+            'title'=>'Form Register'
         ]);
     }
 

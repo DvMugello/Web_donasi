@@ -14,4 +14,4 @@ Route::get('/Login',[LoginController::class,'index'])->middleware('guest');
 Route::post('/Login',[LoginController::class,'authenticate']);
 Route::post('/logout',[LoginController::class,'logout']);
 
-Route::resource('/Register', RegisterController::class)->middleware('auth');
+Route::resource('/Register', RegisterController::class);
