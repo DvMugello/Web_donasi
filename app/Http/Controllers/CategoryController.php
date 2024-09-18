@@ -35,7 +35,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData=$request->validate([
+            'name'=>'required',
+            'slug'=>'required|unique:users'
+        ]);
+
+        Category::create($validateData);
+        return redirect('/dashboard/admin/category')->with('success','Category Successfull Added Has Been');
     }
 
     /**
