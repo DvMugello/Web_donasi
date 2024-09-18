@@ -12,7 +12,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.admin.category.index',[
+            'title'=>'Dashboard Category',
+            'company'=>'KitaBantu'
+        ]);
     }
 
     /**
@@ -20,7 +23,11 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.admin.category.create',[
+            'title'=>'Dashboard Category',
+            'company'=>'KitaBantu',
+            'subteks'=>'Create Category'
+        ]);
     }
 
     /**
