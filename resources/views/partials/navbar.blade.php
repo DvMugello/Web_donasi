@@ -22,7 +22,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="btn btn-primary dropdown-toggle text-white ms-2 me-5" href="#" role="button"
+                    <a class="btn btn-primary dropdown-toggle text-white ms-2 me-4" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Tentang Kami
                     </a>
@@ -35,12 +35,26 @@
                         <li><a class="dropdown-item" href="#">Something else here</a></li>
                     </ul>
                 </li>
-
+                @role('admin')
+                <li class="nav-item dropdown">
+                    <a class="btn btn-primary dropdown-toggle text-white ms-1 me-5" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Admin
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('dashboard.admin') }}">Dashboard</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                @endrole
                 @auth()
                 <form action="/logout" method="post">
                     @csrf
-                    <button type="submit" class="nav-item text-white btn fs-6 text-uppercase icon-link icon-link-hover" style="--bs-link-hover-color"><i
-                            class="bi bi-box-arrow-in-right"></i>Logout</button>
+                    <button type="submit" class="nav-item text-black btn btn-light fs-6  icon-link icon-link-hover" style="--bs-link-hover-color">Logout</button>
                     </form>
                 @else
                     <li class="nav-item ms-3 me-2">
