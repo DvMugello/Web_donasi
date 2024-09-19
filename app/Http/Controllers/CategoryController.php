@@ -14,7 +14,8 @@ class CategoryController extends Controller
     {
         return view('dashboard.admin.category.index',[
             'title'=>'Dashboard Category',
-            'company'=>'KitaBantu'
+            'company'=>'KitaBantu',
+            'list'=>Category::all(),
         ]);
     }
 
@@ -37,7 +38,7 @@ class CategoryController extends Controller
     {
         $validateData=$request->validate([
             'name'=>'required',
-            'slug'=>'required|unique:users'
+            'slug'=>'required|unique:categories'
         ]);
 
         Category::create($validateData);
@@ -57,7 +58,12 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('dashboard.admin.category.edit',[
+            "title"=>'Dashboard Category',
+            "company"=>'KitaBantu',
+            "subteks"=>'Edit Category',
+            "category"=>$category
+        ]);
     }
 
     /**
@@ -65,7 +71,19 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $rules =[
+            'name'=>'required'
+        ];
+
+        if($request->slug != $category->slug){
+            $rules['slug'] = 'required|unique:categories';
+        }
+        $validateData = $request->validate($rules);
+
+        Category::where('id',$category->id)
+        ->update($validateData);
+
+        return redirect('/dashboard/admin/category')->with('success','Category Successfull Updated Has Been');
     }
 
     /**
