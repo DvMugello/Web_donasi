@@ -39,7 +39,7 @@
         <h2>{{ $subteks }}</h2>
         <div class="table-responsive small">
             <table class="table table-striped table-sm">
-                <form method="post" action="{{ route('category.edit',('category')) }}" enctype="multipart/form-data">
+                <form method="post" action="{{ route('category.update',$category->id) }}" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="mb-3">

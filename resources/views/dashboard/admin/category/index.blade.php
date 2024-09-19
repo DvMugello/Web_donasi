@@ -62,8 +62,18 @@
                 <td>{{ $category->name }}</td>
                 <td>{{ $category->slug }}</td>
 
-                <td><a href="{{ route('category.edit',('category')) }}"
+                <td><a href="{{ route('category.edit',$category->id) }}"
                     class="badge bg-warning"><i class="bi bi-plus-circle"></i></a></td>
+                    <form action="{{ route('category.destroy',$category->id) }}" method="post"
+                        class="d-inline">
+                        @method('delete')
+                        @csrf
+                        <td>
+                            <button class="badge bg-danger border-0"
+                                onclick="return confirm('Hapus Data Ini?')"><i
+                                    class="bi bi-x-circle"></i></button>
+                        </td>
+                    </form>
               </tr>
             </tbody>
             @endforeach

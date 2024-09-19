@@ -50,7 +50,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        // return view('dashboard.admin.category.show',compact('category'));
     }
 
     /**
@@ -58,7 +58,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('dashboard.admin.category.edit',[
+        return view('dashboard.admin.category.edit',compact('category'),[
             "title"=>'Dashboard Category',
             "company"=>'KitaBantu',
             "subteks"=>'Edit Category',
@@ -83,7 +83,7 @@ class CategoryController extends Controller
         Category::where('id',$category->id)
         ->update($validateData);
 
-        return redirect('/dashboard/admin/category')->with('success','Category Successfull Updated Has Been');
+        return redirect()->route('category.index')->with('success','Category Successfull Updated Has Been');
     }
 
     /**
@@ -91,6 +91,9 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->route('category.index')
+                         ->with('success', 'Category deleted successfully.');
     }
 }
