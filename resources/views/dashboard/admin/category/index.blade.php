@@ -45,7 +45,7 @@
           </div>
         </div>
 
-        <h2>Section title</h2>
+        <h2>Section Dashboard</h2>
         <div class="table-responsive small">
           <table class="table table-striped table-sm">
             <thead>
@@ -63,7 +63,7 @@
                 <td>{{ $category->slug }}</td>
 
                 <td><a href="{{ route('category.edit',$category->id) }}"
-                    class="badge bg-warning"><i class="bi bi-plus-circle"></i></a></td>
+                    class="badge bg-warning"><i class="bi bi-pencil-square"></i></a></td>
                     <form action="{{ route('category.destroy',$category->id) }}" method="post"
                         class="d-inline">
                         @method('delete')
