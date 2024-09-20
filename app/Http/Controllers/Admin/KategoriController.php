@@ -17,7 +17,7 @@ class KategoriController extends Controller
         return view('dashboard.admin.category.index',[
             'title'=>'Dashboard Category',
             'company'=>'KitaBantu',
-            'list'=>Category::all(),
+            'list'=>Category::latest()->filter(request(['search']))->paginate(7)->withQueryString(),
         ]);
     }
 
