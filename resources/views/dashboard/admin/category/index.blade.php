@@ -38,7 +38,7 @@
             <div class="btn-group me-2">
               <a type="button" href="{{ route('category.create') }}" class="btn btn-sm btn-outline-secondary">Create Category</a>
             </div>
-            <form class="d-flex"  action="{{ route('category.index') }}" role="search">a
+            <form class="d-flex"  action="{{ route('category.index') }}" role="search">
                     <input type="text" class="form-control" placeholder="Search..." name="search"
                         value="{{ request('search') }}">
                     <button class="btn btn-secondary" type="submit">Search</button>

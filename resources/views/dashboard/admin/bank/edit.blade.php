@@ -47,11 +47,11 @@
                         <x-forms.input name="name" id="name" type="text" value="{{ old('name', $bank->name) }}"
                             placeholder="Nama Bank" attribute="required" />
                     </div>
-                    {{-- <div class="mb-3">
+                    <div class="mb-3">
                         <label for="slug" class="form-label">Slug Bank</label>
                         <x-forms.input name="slug" id="slug" type="text" value="{{ old('slug', $bank->slug) }}"
                             placeholder="Slug Bank" attribute="required" />
-                    </div> --}}
+                    </div>
                     <button type="submit" class="btn btn-primary">Update Project</button>
                 </form>
             </table>
