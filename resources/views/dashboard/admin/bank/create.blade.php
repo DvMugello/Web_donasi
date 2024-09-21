@@ -39,12 +39,12 @@
         <h2>{{ $subteks }}</h2>
         <div class="table-responsive small">
             <table class="table table-striped table-sm">
-                <form method="post" action="{{ route('category.store') }}" enctype="multipart/form-data">
+                <form method="post" action="{{ route('bank.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nama Category</label>
+                        <label for="name" class="form-label">Nama Bank</label>
                         <x-forms.input name="name" id="name" type="text" value="{{ old('name') }}"
-                            placeholder="Nama Category" attribute="required" />
+                            placeholder="Nama Bank" attribute="required" />
                     </div>
                     <button type="submit" class="btn btn-primary">Create Project</button>
                 </form>

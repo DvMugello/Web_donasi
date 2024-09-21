@@ -36,9 +36,9 @@
           <h1 class="h2">{{ $title }}</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-              <a type="button" href="{{ route('category.create') }}" class="btn btn-sm btn-outline-secondary">Create Category</a>
+              <a type="button" href="{{ route('bank.create') }}" class="btn btn-sm btn-outline-secondary">Create Bank</a>
             </div>
-            <form class="d-flex"  action="{{ route('category.index') }}" role="search">a
+            <form class="d-flex"  action="{{ route('bank.index') }}" role="search">a
                     <input type="text" class="form-control" placeholder="Search..." name="search"
                         value="{{ request('search') }}">
                     <button class="btn btn-secondary" type="submit">Search</button>
@@ -56,16 +56,16 @@
                 <th scope="col">Slug</th>
               </tr>
             </thead>
-            @foreach ($list as $category)
+            @foreach ($list as $bank)
             <tbody>
               <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td>{{ $category->name }}</td>
-                <td>{{ $category->slug }}</td>
+                <td>{{ $bank->name }}</td>
+                <td>{{ $bank->slug }}</td>
 
-                <td><a href="{{ route('category.edit',$category->id) }}"
+                <td><a href="{{ route('bank.edit',$bank->id) }}"
                     class="badge bg-warning"><i class="bi bi-pencil-square"></i></a></td>
-                    <form action="{{ route('category.destroy',$category->id) }}" method="post"
+                    <form action="{{ route('bank.destroy',$bank->id) }}" method="post"
                         class="d-inline">
                         @method('delete')
                         @csrf
