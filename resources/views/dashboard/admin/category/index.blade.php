@@ -80,6 +80,9 @@
             @endforeach
           </table>
         </div>
+        <div class="d-flex justify-content-center">
+            {{ $list->links() }}
+        </div>
       </main>
   </div>
 </div>
