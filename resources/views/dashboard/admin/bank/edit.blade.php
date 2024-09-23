@@ -14,18 +14,18 @@
         <h2>{{ $subteks }}</h2>
         <div class="table-responsive small">
             <table class="table table-striped table-sm">
-                <form method="post" action="{{ route('category.update',$category->id) }}" enctype="multipart/form-data">
+                <form method="post" action="{{ route('bank.update',$bank->id) }}" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nama Category</label>
-                        <x-forms.input name="name" id="name" type="text" value="{{ old('name', $category->name) }}"
-                            placeholder="Nama Category" attribute="required" />
+                        <label for="name" class="form-label">Nama Bank</label>
+                        <x-forms.input name="name" id="name" type="text" value="{{ old('name', $bank->name) }}"
+                            placeholder="Nama Bank" attribute="required" />
                     </div>
                     <div class="mb-3">
-                        <label for="slug" class="form-label">Slug Category</label>
-                        <x-forms.input name="slug" id="slug" type="text" value="{{ old('slug', $category->slug) }}"
-                            placeholder="Slug Category" attribute="required" />
+                        <label for="slug" class="form-label">Slug Bank</label>
+                        <x-forms.input name="slug" id="slug" type="text" value="{{ old('slug', $bank->slug) }}"
+                            placeholder="Slug Bank" attribute="required" />
                     </div>
                     <button type="submit" class="btn btn-primary">Update Project</button>
                 </form>

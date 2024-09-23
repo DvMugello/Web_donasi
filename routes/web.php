@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BankController;
 use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
@@ -18,6 +19,7 @@ Route::post('/logout',[LoginController::class,'logout']);
 
 Route::resource('/Register', RegisterController::class);
 Route::resource('/dashboard/admin/category', KategoriController::class);
+Route::resource('/dashboard/admin/bank', BankController::class);
 
 Route::group([
  'prefix' => 'dashboard',
