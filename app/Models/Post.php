@@ -2,17 +2,18 @@
 
 namespace App\Models;
 
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Post extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasFactory , InteractsWithMedia;
 
-    protected $fillable = [
-        'name',
-        'slug'
-    ];
+    protected $guarded= ['id'];
+
+    protected $with =['category'];
 
     public function scopeFilter($query, array $filters)
     {
@@ -24,10 +25,9 @@ class Category extends Model
 
         });
     }
+    public function category()
 
-    public function posts()
     {
-        return $this->hasMany(Post::class);
+        return $this->belongsTo(Category::class);
     }
-
 }

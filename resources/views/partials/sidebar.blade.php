@@ -13,6 +13,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" href="{{ route('post.index') }}">
+                <i class="bi bi-file-post"></i>
+              Post
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link d-flex align-items-center gap-2" href="{{ route('bank.index') }}">
               <svg class="bi"><use xlink:href="#file-earmark"/></svg>
               Bank
