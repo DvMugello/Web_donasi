@@ -38,7 +38,7 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData=$request->validate([
+        $request->validate([
             'name'=>'required',
         ]);
 
